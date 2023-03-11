@@ -1,0 +1,11 @@
+BIBLIOTECAS UTILIZADAS NO PROJETO MONSTER
+-----------------------------------------------
+joblib
+numpy
+opencv-python
+pip
+scikit-learn
+scipy
+setuptools
+threadpoolctl
+wheel
