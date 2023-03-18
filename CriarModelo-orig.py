@@ -6,8 +6,8 @@ import joblib
 images = []
 labels = []
 
-for i in range(31):
-    image = cv2.imread(f'images_gray/{i}.jpg')
+for i in range(132):
+    image = cv2.imread(f'monster_gray/{i}.jpg')
     if image is None :
         print(f'Não foi possível abrir a imagem {i} da pasta monster,')
     images.append(image)

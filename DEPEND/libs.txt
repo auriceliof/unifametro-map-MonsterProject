@@ -1,5 +1,7 @@
 BIBLIOTECAS UTILIZADAS NO PROJETO MONSTER
 -----------------------------------------------
+pip install 
+
 joblib
 numpy
 opencv-python
@@ -9,3 +11,95 @@ scipy
 setuptools
 threadpoolctl
 wheel
+
+--
+TIRAR FUNDO
+
+rembg - remove
+PIL - image
+os
+pyqt
+
+
+
+--
+
+import joblib
+import cv2
+
+# Carregar o classificador
+clf = joblib.load('modelo_monster.joblib')
+
+# Extrair recursos das imagens
+def extract_features(image):
+    color_hist = cv2.calcHist([image], [0, 1, 2], None, [8, 8, 8], [0, 256, 0, 256, 0, 256])
+    color_hist = cv2.normalize(color_hist, color_hist).flatten()
+    return color_hist
+
+# Integrar classificador em um programa de visão computacional
+def recognize_monster_can(image):
+    features = extract_features(image)
+    prediction = clf.predict([features])
+    if prediction == 1:
+        return 'Monster'
+    else:
+        return 'Other Energy Drink'
+
+for i in range(31):
+    image = cv2.imread('images/{}.jpg'.format(i))
+    result = recognize_monster_can(image)
+    print(f'Image {i} is {result}')
+
+
+
+--
+
+from rembg import remove
+from PIL import Image
+import os
+
+folder = "imagens_capturadas"
+num_files = len(os.listdir(folder))
+
+for i in range(num_files):
+    input_path = f"imagens_capturadas/monster{i}.jpg"
+    output_path = f"imagens_sem_fundo/monster{i}.png"
+
+    input = Image.open(input_path)
+    output = remove(input)
+    output.save(output_path)
+
+
+--
+
+FLUXO
+
+---
+(1) main
+
+	[1] : CONVERTER PNG 
+
+	[2] : NORMALIZAR
+
+	[3] : CRIAR MODELO
+
+	[4] : USABILIDADE
+
+
+---
+
+CLASS
+
+--
+
+(2) class ConvertPNG
+
+(3) class Normalizar
+
+(4) class CriarModelo
+
+(5) class Uso
+
+(6) Rotas
+
+
