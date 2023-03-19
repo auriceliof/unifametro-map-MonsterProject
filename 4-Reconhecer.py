@@ -1,7 +1,11 @@
 import joblib
 import cv2
 
-folder = "no_monster_sem_fundo-gray"
+folder = "monster_mix"
+num_files = 11
+pred_value = 1
+
+###############################################
 
 # Carregar o classificador
 clf = joblib.load('modelo_monster.joblib')
@@ -16,12 +20,20 @@ def extract_features(image):
 def recognize_monster_can(image):
     features = extract_features(image)
     prediction = clf.predict([features])
-    if prediction == 1:
+    if prediction == pred_value:
         return 'Monster'
     else:
         return 'Other Energy Drink'
 
-for i in range(31):
-    image = cv2.imread('{}/{}.png'.format(folder, i))
+for i in range(num_files):
+#    image = cv2.imread('{}/{}.png'.format(folder, i))
+
+    output_path1 = f"{folder}/{i}.1.png"
+    image = cv2.imread(output_path1)
     result = recognize_monster_can(image)
-    print(f'Image {i} is {result}')
+    print(f'Image {i}.1 is {result}')
+
+    output_path2 = f"{folder}/{i}.0.png"
+    image = cv2.imread(output_path2)
+    result = recognize_monster_can(image)
+    print(f'Image {i}.0 is {result}')

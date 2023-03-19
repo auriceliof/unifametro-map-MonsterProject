@@ -12,16 +12,16 @@ BIBLIOTECAS UTILIZADAS NO PROJETO MONSTER
 
 pip install 
 
-?	pip
-?	wheel
-?	os
-?	opencv-python
-?	numpy
-?	joblib
-?	scikit-learn
-?	scipy
-?	setuptools
-?	threadpoolctl
-?	rembg
-?	PIL
+rembg
+pip
+wheel
+os
+opencv-python
+numpy
+joblib
+scikit-learn
+scipy
+setuptools
+threadpoolctl
+PIL
 shutil

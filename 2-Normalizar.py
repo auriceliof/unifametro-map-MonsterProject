@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 import os
+import shutil
 
 class ModelFactory:
     @staticmethod
@@ -34,6 +35,7 @@ factory = ModelFactory()
 while True:
     input_images_folder_name = input("Write the folder name of the input images: ").lower()
     output_images_folder_name = input("Write the folder name of the output images: ").lower()
+    shutil.rmtree(output_images_folder_name, ignore_errors=True)
     os.mkdir(output_images_folder_name)
     factory.imagesNormalizer(input_images_folder_name, output_images_folder_name)
     if input("Do you have another folder to normalize the image? (1-SIM/2-NÃO) >>> ")=='2':

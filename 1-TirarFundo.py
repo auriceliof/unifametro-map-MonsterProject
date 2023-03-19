@@ -4,16 +4,16 @@ import shutil
 import os
 
 folder1 = "monster"
-num_files1 = len(os.listdir(folder1))
+folder2 = "no_monster"
 
+###############################################
+
+num_files1 = len(os.listdir(folder1))
 output_path1 = f"{folder1}_sem_fundo"
 shutil.rmtree(output_path1, ignore_errors=True)
 os.mkdir(output_path1)
 
-
-folder2 = "no_monster"
 num_files2 = len(os.listdir(folder2))
-
 output_path2 = f"{folder2}_sem_fundo"
 shutil.rmtree(output_path2, ignore_errors=True)
 os.mkdir(output_path2)
