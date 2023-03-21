@@ -20,6 +20,7 @@ output_path = f"{folder_mix}"
 shutil.rmtree(folder_mix, ignore_errors=True)
 os.mkdir(folder_mix)
 
+###############################################
 
 images = []
 labels = []
