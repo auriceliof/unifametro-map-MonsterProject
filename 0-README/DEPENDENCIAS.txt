@@ -10,18 +10,16 @@ python 3.9
 BIBLIOTECAS UTILIZADAS NO PROJETO MONSTER
 -----------------------------------------------
 
-pip install 
+python.exe -m pip install --upgrade pip
 
-rembg
-pip
-wheel
-os
-opencv-python
-numpy
-joblib
-scikit-learn
-scipy
-setuptools
-threadpoolctl
-PIL
-shutil
+pip install:
+            os
+            opencv-python
+            numpy
+            joblib
+            scikit-learn
+            scipy
+            threadpoolctl
+            PIL
+            shutil
+            rembg

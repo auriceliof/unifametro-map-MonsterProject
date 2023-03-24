@@ -3,6 +3,8 @@ from PIL import Image
 import shutil
 import os
 
+###############################################
+
 folder1 = "monster"
 folder2 = "no_monster"
 

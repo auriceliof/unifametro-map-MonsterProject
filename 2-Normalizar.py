@@ -3,6 +3,7 @@ import numpy as np
 import os
 import shutil
 
+###############################################
 
 folder1 = "monster_sem_fundo"
 folder2 = "no_monster_sem_fundo"

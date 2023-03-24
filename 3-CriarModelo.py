@@ -7,6 +7,8 @@ from rembg import remove
 from PIL import Image
 import shutil
 
+###############################################
+
 folder1 = "monster_sem_fundo-gray"
 folder2 = "no_monster_sem_fundo-gray"
 folder_mix = "monster_mix"
@@ -27,7 +29,7 @@ labels = []
 
 for i in range(num_files1):
     input_path = f"{folder1}/{i}.png"
-    output_path = f"{folder_mix}/{i}.1.png"
+    output_path = f"{folder_mix}/{i}.png"
 
     input = Image.open(input_path)
     output = remove(input)
@@ -43,7 +45,7 @@ for i in range(num_files1):
 
 for i in range(num_files2):
     input_path = f"{folder2}/{i}.png"
-    output_path = f"{folder_mix}/{i}.0.png"
+    output_path = f"{folder_mix}/{num_files1 + i}.png"
 
     input = Image.open(input_path)
     output = remove(input)

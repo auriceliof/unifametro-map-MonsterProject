@@ -1,8 +1,9 @@
 import joblib
 import cv2
+import os
 
 folder = "monster_mix"
-num_files = 11
+num_files = len(os.listdir(folder))
 pred_value = 1
 
 ###############################################
@@ -26,14 +27,6 @@ def recognize_monster_can(image):
         return 'Other Energy Drink'
 
 for i in range(num_files):
-#    image = cv2.imread('{}/{}.png'.format(folder, i))
-
-    output_path1 = f"{folder}/{i}.1.png"
-    image = cv2.imread(output_path1)
+    image = cv2.imread('{}/{}.png'.format(folder, i))
     result = recognize_monster_can(image)
-    print(f'Image {i}.1 is {result}')
-
-    output_path2 = f"{folder}/{i}.0.png"
-    image = cv2.imread(output_path2)
-    result = recognize_monster_can(image)
-    print(f'Image {i}.0 is {result}')
+    print(f'Image {i} is {result}')
