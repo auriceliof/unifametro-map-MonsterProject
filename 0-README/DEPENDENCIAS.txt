@@ -23,3 +23,5 @@ pip install:
             PIL
             shutil
             rembg
+            PyQt5
+            PyQt5-tools

@@ -10,11 +10,6 @@ def chama_segunda_tela():
         segunda_tela.show()
     else :
         primeira_tela.label_4.setText("Dados de login incorretos!")
-#TESTE
-def chama_primeira_tela():
-    segunda_tela.close()
-    primeira_tela.show()
-#FIM TESTE
 
 def logout():
     segunda_tela.close()
