@@ -1,5 +1,4 @@
 from PyQt5 import  uic,QtWidgets
-import sqlite3
 
 def chama_segunda_tela():
     primeira_tela.label_4.setText("")
